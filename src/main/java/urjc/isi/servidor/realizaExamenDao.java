@@ -16,11 +16,10 @@ public class realizaExamenDao {
             if(c!=null) return;
 
             
-            URI dbUri1 = new URI(System.getenv("DATABASE_URL"));
-		String dbUri = dbUri1.toString();
-        	String username = dbUri.getUserInfo().split(":")[0];
-            String password = dbUri.getUserInfo().split(":")[1];
-            dbUrl = "jdbc:postgresql://" + dbUri.getHost() + dbUri.getPath();
+            URI dbUri = new URI(System.getenv("DATABASE_URL"));
+        	//String username = dbUri.getUserInfo().toString().split(":")[0];
+            //String password = dbUri.getUserInfo().toString().split(":")[1];
+            dbUrl = "jdbc:postgresql://" + dbUri.getHost().toString() + dbUri.getPath().toString();
 		
         	c = DriverManager.getConnection(dbUrl);
             //       	c = DriverManager.getConnection("jdbc:sqlite:proyecto.db");
