@@ -27,8 +27,9 @@ public class alumnoDao {
                 //c = DriverManager.getConnection("jdbc:postgresql:proyecto.db");
             	c.setAutoCommit(false);
 
-//            c.prepareStatement("drop table if exists Alumnos").execute();
-//            c.prepareStatement("create table Alumnos (idAlumno varchar(200), nombre varchar(100), puerto integer, ip varchar(100))").execute();
+            c.prepareStatement("drop table if exists Alumnos").execute();
+            c.prepareStatement("create table Alumnos (idAlumno varchar(200), nombre varchar(100), puerto integer, ip varchar(100))").execute();
+	
             	c.commit();
         } catch (SQLException e) {
             throw new RuntimeException(e);
