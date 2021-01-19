@@ -21,7 +21,7 @@ public class alumnoDao {
             dbUri = new URI("https://proyect-isi.herokuapp.com/");
         	//String username = dbUri.getUserInfo().toString().split(":")[0];
             //String password = dbUri.getUserInfo().toString().split(":")[1];
-            dbUrl = "jdbc:postgresql://" + dbUri.getHost() + dbUri.getPort().toString() + ":proyecto.db";
+            String dbUrl = "jdbc:postgresql://" + dbUri.getHost() + dbUri.getPort().toString() + ":proyecto.db";
             
         	c = DriverManager.getConnection(dbUrl);
                 //c = DriverManager.getConnection("jdbc:postgresql:proyecto.db");
