@@ -13,6 +13,7 @@ public class examenDao {
 
 	// Con este método creamos la conexión con la bbdd.
     public examenDao() throws URISyntaxException {
+	URI dbUri = null;
         try {
             if(c!=null) return;
 
