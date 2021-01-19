@@ -16,15 +16,13 @@ public class examenDao {
         try {
             if(c!=null) return;
 
-            /*
             URI dbUri = new URI(System.getenv("DATABASE_URL"));
         	//String username = dbUri.getUserInfo().toString().split(":")[0];
             //String password = dbUri.getUserInfo().toString().split(":")[1];
-            dbUrl = "jdbc:postgresql://" + dbUri.getHost().toString() + dbUri.getPath().toString();
+            dbUrl = "jdbc:postgresql://" + dbUri.Host().toString() + dbUri.Port().toString() + ":proyecto.db";
             
         	c = DriverManager.getConnection(dbUrl);
-		*/
-                c = DriverManager.getConnection("jdbc:postgresql:proyecto.db");
+                //c = DriverManager.getConnection("jdbc:postgresql:proyecto.db");
             	c.setAutoCommit(false);
             
 
