@@ -28,7 +28,7 @@ public class alumnoDao {
             	c.setAutoCommit(false);
 
             c.prepareStatement("drop table if exists Alumnos").execute();
-            c.prepareStatement("CREATE TABLE "Alumnos" ("idAlumno"	VARCHAR(50) NOT NULL UNIQUE,"Nombre"	VARCHAR(50) NOT NULL,"Puerto"	INTEGER,"IP"	VARCHAR(50),PRIMARY KEY("idAlumno"))").execute();
+            c.prepareStatement("CREATE TABLE Alumnos (idAlumno	VARCHAR(50) NOT NULL UNIQUE,Nombre	VARCHAR(50) NOT NULL,Puerto	INTEGER,IP	VARCHAR(50),PRIMARY KEY(idAlumno))").execute();
 	
             	c.commit();
         } catch (SQLException e) {
