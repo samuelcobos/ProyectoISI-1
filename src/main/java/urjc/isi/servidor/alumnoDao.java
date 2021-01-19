@@ -20,7 +20,7 @@ public class alumnoDao {
             URI dbUri = new URI(System.getenv("DATABASE_URL"));
         	//String username = dbUri.getUserInfo().toString().split(":")[0];
             //String password = dbUri.getUserInfo().toString().split(":")[1];
-            dbUrl = "jdbc:postgresql://" + dbUri.Host().toString() + dbUri.Port().toString() + ":proyecto.db";
+            dbUrl = "jdbc:postgresql://" + dbUri.getHost().toString() + dbUri.getPort().toString() + ":proyecto.db";
             
         	c = DriverManager.getConnection(dbUrl);
                 //c = DriverManager.getConnection("jdbc:postgresql:proyecto.db");
