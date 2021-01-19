@@ -23,7 +23,7 @@ public class alumnoDao {
             String password = dbUri.getUserInfo().split(":")[1];
             dbUrl = "jdbc:postgresql://" + dbUri.getHost() + dbUri.getPath();
             
-        	c = DriverManager.getConnection(dbUri);
+        	c = DriverManager.getConnection(dbUrl);
             //       	c = DriverManager.getConnection("jdbc:sqlite:proyecto.db");
             	c.setAutoCommit(false);
 
