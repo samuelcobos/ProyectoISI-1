@@ -16,10 +16,10 @@ public class realizaExamenDao {
             if(c!=null) return;
 
             
-            URI dbUri = new URI(System.getenv("DATABASE_URL"));
+            dbUri = new URI("https://proyect-isi.herokuapp.com/");
         	//String username = dbUri.getUserInfo().toString().split(":")[0];
             //String password = dbUri.getUserInfo().toString().split(":")[1];
-            dbUrl = "jdbc:postgresql://" + dbUri.Host().toString() + dbUri.Port().toString() + ":proyecto.db";
+            String dbUrl = "jdbc:postgresql://" + dbUri.getHost() + String.valueOf(dbUri.getPort()) + ":proyecto.db";
             
         	c = DriverManager.getConnection(dbUrl);
                 //c = DriverManager.getConnection("jdbc:postgresql:proyecto.db");
