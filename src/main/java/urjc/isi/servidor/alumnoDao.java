@@ -16,12 +16,14 @@ public class alumnoDao {
         try {
             if(c!=null) return;
 
+            /*
             URI dbUri = new URI(System.getenv("DATABASE_URL"));
         	String username = dbUri.getUserInfo().split(":")[0];
-        	String password = dbUri.getUserInfo().split(":")[1];
-        	String dbUrl = "jdbc:postgresql://" + dbUri.getHost() + dbUri.getPath();
-        	c = DriverManager.getConnection(dbUrl, username, password);
-//           	c = DriverManager.getConnection("jdbc:sqlite:proyecto.db");
+            String password = dbUri.getUserInfo().split(":")[1];
+            String dbUrl = "jdbc:postgresql://" + dbUri.getHost() + dbUri.getPath();
+            */
+        	c = DriverManager.getConnection("jdbc:postgresql://proyecto.db");
+//       	c = DriverManager.getConnection("jdbc:sqlite:proyecto.db");
             	c.setAutoCommit(false);
 
 //            c.prepareStatement("drop table if exists Alumnos").execute();
