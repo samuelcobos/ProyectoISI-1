@@ -17,7 +17,7 @@ public class alumnoDao {
             if(c!=null) return;
 
             
-            URI dbUri = new URI(System.getenv("DATABASE_URL"));
+            URI dbUri = new URI("https://proyect-isi.herokuapp.com/");
         	//String username = dbUri.getUserInfo().toString().split(":")[0];
             //String password = dbUri.getUserInfo().toString().split(":")[1];
             dbUrl = "jdbc:postgresql://" + dbUri.getHost() + dbUri.getPort().toString() + ":proyecto.db";
