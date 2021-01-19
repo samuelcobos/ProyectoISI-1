@@ -29,7 +29,7 @@ public class examenDao {
             
 
             c.prepareStatement("drop table if exists Examenes").execute();
-            c.prepareStatement("CREATE TABLE "Examenes" ("IdExamen"	INTEGER NOT NULL UNIQUE,"Fecha"	DATE NOT NULL,"Asignatura" VARCHAR(50) NOT NULL,PRIMARY KEY("IdExamen"))").execute();
+            c.prepareStatement("CREATE TABLE Examenes (IdExamen	INTEGER NOT NULL UNIQUE,Fecha	DATE NOT NULL,Asignatura VARCHAR(50) NOT NULL,PRIMARY KEY(IdExamen))").execute();
             
             	c.commit();
         } catch (SQLException e) {
