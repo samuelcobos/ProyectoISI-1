@@ -13,14 +13,15 @@ public class examenDao {
 
 	// Con este método creamos la conexión con la bbdd.
     public examenDao() throws URISyntaxException {
-	URI dbUri = null;
         try {
             if(c!=null) return;
 
-            dbUri = new URI("https://proyect-isi.herokuapp.com/");
-            String username = dbUri.getUserInfo().split(":")[0];
-            String password = dbUri.getUserInfo().split(":")[1];
-            String dbUrl = "jdbc:postgresql://" + dbUri.getHost() + ":" + String.valueOf(dbUri.getPort()) + "/proyecto.db";
+            String username = "ktzfqcfutjkpgx";
+            String password = "9fc28af010f8656f32da4d6d315de56c424f9620350a22c5a376529ef03bd3a2";
+	    String host = "ec2-54-216-155-253.eu-west-1.compute.amazonaws.com";
+	    String port = "5432";
+	    String database = "d1nf4olvlgr26a";
+            String dbUrl = "jdbc:postgresql://" + host + ":" + port + "/" + database;
             
         	c = DriverManager.getConnection(dbUrl,username,password);
                 //c = DriverManager.getConnection("jdbc:postgresql:proyecto.db");
