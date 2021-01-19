@@ -22,7 +22,7 @@ public class realizaExamenDao {
             String dbUrl = "jdbc:postgresql://" + dbUri.getHost() + dbUri.getPath();
             */
         	c = DriverManager.getConnection("jdbc:postgresql://proyecto.db");
-//       	c = DriverManager.getConnection("jdbc:sqlite:proyecto.db");
+            //       	c = DriverManager.getConnection("jdbc:sqlite:proyecto.db");
             	c.setAutoCommit(false);
 
 //            c.prepareStatement("drop table if exists RealizaExamen").execute();
