@@ -28,8 +28,8 @@ public class examenDao {
             	c.setAutoCommit(false);
             
 
-            //c.prepareStatement("drop table if exists Examenes").execute();
-            //c.prepareStatement("create table Examenes (idExamen integer, Fecha varchar(100), Asignatura varchar(100), Path varchar(100))").execute();
+            c.prepareStatement("drop table if exists Examenes").execute();
+            c.prepareStatement("CREATE TABLE "Examenes" ("IdExamen"	INTEGER NOT NULL UNIQUE,"Fecha"	DATE NOT NULL,"Asignatura" VARCHAR(50) NOT NULL,PRIMARY KEY("IdExamen")").execute();
             
             	c.commit();
         } catch (SQLException e) {
