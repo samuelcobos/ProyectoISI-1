@@ -17,11 +17,11 @@ public class alumnoDao {
             if(c!=null) return;
 
             
-            URI dbUri = new URI(System.getenv("DATABASE_URL"));
-		String dbUri = dbUri.toString();
+            URI dbUri1 = new URI(System.getenv("DATABASE_URL"));
+		String dbUri = dbUri1.toString();
         	String username = dbUri.getUserInfo().split(":")[0];
             String password = dbUri.getUserInfo().split(":")[1];
-            String dbUrl = "jdbc:postgresql://" + dbUri.getHost() + dbUri.getPath();
+            dbUrl = "jdbc:postgresql://" + dbUri.getHost() + dbUri.getPath();
             
         	c = DriverManager.getConnection(dbUri);
             //       	c = DriverManager.getConnection("jdbc:sqlite:proyecto.db");
