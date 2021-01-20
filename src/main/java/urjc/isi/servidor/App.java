@@ -91,6 +91,7 @@ public class App
 		
 		
 		post("/:random", (req, res) -> { // Revisar si es get o post
+			console.printf(req.queryParams("asignatura"));
 			String path = req.uri();
 			String aux = path.substring(1,path.length());
 			//Añadido
