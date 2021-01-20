@@ -72,7 +72,11 @@ public class App {
 			return result;
 		});
 
-		get("/", (req, res) -> IOUtils.toString(App.class.getResourceAsStream("/index.html")));
+		get("/", (req, res) -> {
+			String result = IOUtils.toString(App.class.getResourceAsStream("/index.html"));
+			System.out.println(result);
+			return result;
+		});
 
 		
 		
