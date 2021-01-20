@@ -31,7 +31,7 @@ public class App
 {
 	static String cosa = null;
 
-	public void createtables() throws URISyntaxException {
+	public static void createtables() throws URISyntaxException {
         try {
             if(c!=null) return;
 
