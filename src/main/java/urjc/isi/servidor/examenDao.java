@@ -24,14 +24,8 @@ public class examenDao {
             String dbUrl = "jdbc:postgresql://" + host + ":" + port + "/" + database;
             
         	c = DriverManager.getConnection(dbUrl,username,password);
-                //c = DriverManager.getConnection("jdbc:postgresql:proyecto.db");
-            	c.setAutoCommit(false);
-            
-
-            c.prepareStatement("drop table if exists Examenes").execute();
-            c.prepareStatement("CREATE TABLE Examenes (IdExamen	INTEGER NOT NULL UNIQUE,Fecha	DATE NOT NULL,Asignatura VARCHAR(50) NOT NULL,PRIMARY KEY(IdExamen))").execute();
-            
-            	c.commit();
+            c.setAutoCommit(false);
+            c.commit();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

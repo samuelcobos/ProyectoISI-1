@@ -24,23 +24,63 @@ import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URISyntaxException;
+import java.net.URI;
 
 
 public class App 
 {
 	static String cosa = null;
 
+	public createtables() throws URISyntaxException {
+        try {
+            if(c!=null) return;
+
+            String username = "ktzfqcfutjkpgx";
+            String password = "9fc28af010f8656f32da4d6d315de56c424f9620350a22c5a376529ef03bd3a2";
+	    	String host = "ec2-54-216-155-253.eu-west-1.compute.amazonaws.com";
+	    	String port = "5432";
+	    	String database = "d1nf4olvlgr26a";
+            String dbUrl = "jdbc:postgresql://" + host + ":" + port + "/" + database;
+            
+        	c = DriverManager.getConnection(dbUrl,username,password);
+            c.setAutoCommit(false);
+            
+			c.prepareStatement("drop table if exists Examenes CASCADE").execute();
+			c.prepareStatement("drop table if exists Alumnos CASCADE").execute();
+			c.prepareStatement("drop table if exists RealizaExamen CASCADE").execute();
+			c.prepareStatement("CREATE TABLE Examenes (IdExamen	INTEGER NOT NULL UNIQUE,Fecha	DATE NOT NULL,Asignatura VARCHAR(50) NOT NULL,PRIMARY KEY(IdExamen))").execute();
+			c.prepareStatement("CREATE TABLE Alumnos (idAlumno	VARCHAR(50) NOT NULL UNIQUE,Nombre	VARCHAR(50) NOT NULL,Puerto	INTEGER,IP	VARCHAR(50),PRIMARY KEY(idAlumno))").execute();
+			c.prepareStatement("CREATE TABLE RealizaExamen (idExamen INTEGER NOT NULL,idAlumno varchar(50) NOT NULL,Path varchar(50),FOREIGN KEY(idExamen) REFERENCES Examenes(IdExamen),FOREIGN KEY(idAlumno) REFERENCES Alumnos(idAlumno),PRIMARY KEY(idExamen,idAlumno))").execute();
+			
+            c.commit();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 	public static void main(String[] args) throws 
 	ClassNotFoundException, SQLException, URISyntaxException {
 		port(getHerokuAssignedPort());
 		
+		createtables();
 		examenDao examenDao = new examenDao();
 		alumnoDao alumnoDao = new alumnoDao();
 		realizaExamenDao realizaExamenDao = new realizaExamenDao();
+
+		
 	//	int examen=0;//Si es 0 el examen esta finalizado, 1 está activo.
 
 		Random rnd = new Random();
 		
+		get("/", (req, res) -> {
+			String result = "<form method=\"get\" action=\"/profesor\">"
+			+ "<p>Profesor</p>\n"
+			+ "<button type=\"summit\" value=\"profesor\">"	  
+		    + "</form>";
+			
+			return result;
+		});
+
 		get("/profesor", (req, res) -> {
 			int random = rnd.nextInt()*(-1);
 			String result = "<form action='/"+random+  "' method='post'>"

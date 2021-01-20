@@ -19,18 +19,14 @@ public class realizaExamenDao {
             
             String username = "ktzfqcfutjkpgx";
             String password = "9fc28af010f8656f32da4d6d315de56c424f9620350a22c5a376529ef03bd3a2";
-	    String host = "ec2-54-216-155-253.eu-west-1.compute.amazonaws.com";
-	    String port = "5432";
-	    String database = "d1nf4olvlgr26a";
+	        String host = "ec2-54-216-155-253.eu-west-1.compute.amazonaws.com";
+	        String port = "5432";
+	        String database = "d1nf4olvlgr26a";
             String dbUrl = "jdbc:postgresql://" + host + ":" + port + "/" + database;
             
         	c = DriverManager.getConnection(dbUrl,username,password);
-                //c = DriverManager.getConnection("jdbc:postgresql:proyecto.db");
-            	c.setAutoCommit(false);
-
-            c.prepareStatement("drop table if exists RealizaExamen").execute();
-		 c.prepareStatement("CREATE TABLE RealizaExamen (idExamen INTEGER NOT NULL,idAlumno varchar(50) NOT NULL,Path varchar(50),FOREIGN KEY(idExamen) REFERENCES Examenes(IdExamen),FOREIGN KEY(idAlumno) REFERENCES Alumnos(idAlumno),PRIMARY KEY(idExamen,idAlumno))").execute();
-            	c.commit();
+            c.setAutoCommit(false);
+            c.commit();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
