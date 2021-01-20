@@ -24,21 +24,18 @@
 
     <!-- Sidebar -->
     <div class="bg-light border-right" id="sidebar-wrapper">
-      <div class="sidebar-heading">Start Bootstrap </div>
+      <div class="sidebar-heading">ISI </div>
       <div class="list-group list-group-flush">
-        <a href="#" class="list-group-item list-group-item-action bg-light">Dashboard</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Shortcuts</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Overview</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Events</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Profile</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Status</a>
+        <a class="list-group-item list-group-item-action bg-light" id="home" onclick="drawHome()">Home</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light">Profesor</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light">Alumno</a>
       </div>
     </div>
     <!-- /#sidebar-wrapper -->
 
     <!-- Page Content -->
     <div id="page-content-wrapper">
-
+      <!-- 
       <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
         <button class="btn btn-primary" id="menu-toggle">Toggle Menu</button>
 
@@ -68,12 +65,9 @@
           </ul>
         </div>
       </nav>
+      -->
 
-      <div class="container-fluid">
-        <h1 class="mt-4">Simple Sidebar</h1>
-        <p>The starting state of the menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will change.</p>
-        <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>. The top navbar is optional, and just for demonstration. Just create an element with the <code>#menu-toggle</code> ID which will toggle the menu when clicked.</p>
-      </div>
+      <div class="container-fluid" id="container-main"></div>
     </div>
     <!-- /#page-content-wrapper -->
 
@@ -90,6 +84,12 @@
       e.preventDefault();
       $("#wrapper").toggleClass("toggled");
     });
+
+    function drawHome(){
+      $('#container-main').append(`<h1 class="mt-4">Proyecto Final</h1>
+                  <p>Esta es la página principal del proyecto final de la asignatura ISI. En el side bar se puede comprobar y realizar las diferentes acciones.</p>`);
+
+    }
   </script>
 
 </body>
