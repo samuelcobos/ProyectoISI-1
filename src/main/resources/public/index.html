@@ -86,9 +86,14 @@
     });
 
     function drawHome(){
+      removeContain('container-main');
       $('#container-main').append(`<h1 class="mt-4">Proyecto Final</h1>
                   <p>Esta es la página principal del proyecto final de la asignatura ISI. En el side bar se puede comprobar y realizar las diferentes acciones.</p>`);
 
+    }
+
+    function removeContain(id){
+      $('#'+id).remove();
     }
   </script>
 
