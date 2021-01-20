@@ -23,6 +23,7 @@ import javax.servlet.MultipartConfigElement;
 import spark.utils.IOUtils;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -73,8 +74,12 @@ public class App {
 
 		get("/", (req, res) -> {
 			res.redirect("/index.html");
-			return null;
+			File file = new File(App.class.getResource("/index.html").getFile());
+			String s = file.toString();
+			return s;
 		});
+
+		
 		
 		post("/alumno", (req, res) -> {
 			String result = req.queryParams("nombre")+ " " +
