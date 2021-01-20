@@ -73,7 +73,6 @@ public class App {
 		});
 
 		get("/", (req, res) -> {
-			res.redirect("/index.html");
 			File file = new File(App.class.getResource("/index.html").getFile());
 			String s = file.toString();
 			return s;
