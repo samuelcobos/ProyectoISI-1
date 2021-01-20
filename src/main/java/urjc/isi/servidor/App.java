@@ -72,7 +72,7 @@ public class App {
 		});
 
 		get("/", (req, res) -> {
-			res.redirect("/Report00001.html");
+			res.redirect("/index.html");
 			return null;
 		});
 		
