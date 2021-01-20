@@ -98,7 +98,7 @@ public class App
 			String asignatura = req.queryParams("asignatura");
 			//-Añadido
 			String result ="<h1> El examen con ID "+id_examen+" se ha iniciado con el numero generado: "+ aux + "</h1>"
-			+ "<form action='/finalizar' method='post'>"		
+			+ "<form action='/' method='post'>"		
 		    + "<input type=\"submit\" value=\"Finalizar examen\">"	    
 		    + "</form>";
 			
