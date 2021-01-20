@@ -5,7 +5,6 @@ import static spark.Spark.*;
 //import spark.Response;
 import urjc.isi.servidor.App;
 
-
 //import java.sql.Connection;
 //import java.sql.DriverManager;
 //import java.sql.ResultSet;
@@ -18,38 +17,45 @@ import java.util.List;
 import java.util.Random;
 import java.util.StringTokenizer;
 
+import javax.print.DocFlavor.URL;
 import javax.servlet.MultipartConfigElement;
 
+import spark.utils.IOUtils;
+
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URISyntaxException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
-
-public class App 
-{
+public class App {
 	static String cosa = null;
 
-	public static void main(String[] args) throws 
-	ClassNotFoundException, SQLException, URISyntaxException {
+	public static void main(String[] args) throws ClassNotFoundException, SQLException, URISyntaxException {
 		port(getHerokuAssignedPort());
-		
+
 		examenDao examenDao = new examenDao();
 		alumnoDao alumnoDao = new alumnoDao();
 		realizaExamenDao realizaExamenDao = new realizaExamenDao();
-		
-	//	int examen=0;//Si es 0 el examen esta finalizado, 1 está activo.
+
+		// int examen=0;//Si es 0 el examen esta finalizado, 1 está activo.
 
 		Random rnd = new Random();
-		
-		get("/", (req, res) -> {
-			String result = "<form method=\"get\" action=\"/profesor\">"
-			+ "<p>Profesor</p>\n"
-			+ "<button type=\"summit\" value=\"profesor\">"	  
-		    + "</form>";
-			
-			return result;
-		});
+
+		/*
+		 * get("/", (req, res) -> { String result =
+		 * "<form method=\"get\" action=\"/profesor\">" + "<p>Profesor</p>\n" +
+		 * "<button type=\"summit\" value=\"profesor\">" + "</form>";
+		 * 
+		 * return result; });
+		 */
+
+		// get("/", (req, res) -> );
+		//get("/", (req, res) -> IOUtils.toString(Spark.classLoader.getResourceAsStream("./index.html")));
+
 
 		get("/profesor", (req, res) -> {
 			int random = rnd.nextInt()*(-1);
@@ -63,6 +69,11 @@ public class App
 		    + "</form>";
 			
 			return result;
+		});
+
+		get("/", (req, res) -> {
+			res.redirect("/Report00001.html");
+			return null;
 		});
 		
 		post("/alumno", (req, res) -> {
