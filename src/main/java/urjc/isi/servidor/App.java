@@ -1,36 +1,22 @@
 package urjc.isi.servidor;
 
-import static spark.Spark.*;
-//import spark.Request;
-//import spark.Response;
-import urjc.isi.servidor.App;
+import static spark.Spark.get;
+import static spark.Spark.port;
+import static spark.Spark.post;
 
+import java.net.URISyntaxException;
 //import java.sql.Connection;
 //import java.sql.DriverManager;
 //import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Calendar;
 import java.util.Date;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 //import java.sql.Statement;
 //import java.sql.PreparedStatement;
 import java.util.Random;
-import java.util.StringTokenizer;
 
-import javax.print.DocFlavor.URL;
-import javax.servlet.MultipartConfigElement;
-
-import spark.utils.IOUtils;
-
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.URISyntaxException;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Paths;
+import spark.ModelAndView;
 
 public class App {
 	static String cosa = null;
@@ -72,13 +58,21 @@ public class App {
 			return result;
 		});
 
+		/*
 		get("/", (req, res) -> {
 			String result = IOUtils.toString(App.class.getResourceAsStream("/index.html"));
 			System.out.println(result);
 			return result;
 		});
+		*/
 
-		
+		get("/", (request, response) -> {
+			Map<String, Object> viewObjects = new HashMap<String, Object>();
+			viewObjects.put("title", "Welcome to Spark Project");
+			viewObjects.put("templateName", "home.ftl");
+			return new ModelAndView(viewObjects, "main.ftl");
+		 });
+
 		
 		post("/alumno", (req, res) -> {
 			String result = req.queryParams("nombre")+ " " +
