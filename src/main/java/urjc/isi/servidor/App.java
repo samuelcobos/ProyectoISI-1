@@ -66,7 +66,6 @@ public class App
 		});
 		
 		post("/alumno", (req, res) -> {
-			
 			String result = req.queryParams("nombre")+ " " +
 			req.queryParams("dni")+ " " +
 			req.queryParams("idex");
@@ -91,7 +90,7 @@ public class App
 		
 		
 		post("/:random", (req, res) -> { // Revisar si es get o post
-			console.printf(req.queryParams("asignatura"));
+			System.out.println(req.queryParams("asignatura"));
 			String path = req.uri();
 			String aux = path.substring(1,path.length());
 			//Añadido
