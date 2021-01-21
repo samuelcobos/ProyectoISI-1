@@ -28,7 +28,7 @@
       <div class="list-group list-group-flush">
         <a href="#" class="list-group-item list-group-item-action bg-light" id="home-side" onclick="drawHome()">Home</a>
         <a href="/profesor" class="list-group-item list-group-item-action bg-light" id="profesor-side">Profesor</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light" id="alumno-side" onclick="drawStudent()">Alumno</a>
+        <a href="/alumno" class="list-group-item list-group-item-action bg-light" id="alumno-side" onclick="drawStudent()">Alumno</a>
       </div>
     </div>
     <!-- /#sidebar-wrapper -->
@@ -70,7 +70,7 @@
                   <p>Esta es la página principal del proyecto final de la asignatura ISI. En el side bar se puede comprobar y realizar las diferentes acciones.</p>
                   </div>`);
     }
-    
+
     function drawStudent(){
       removeContain('home-content');
       $('#container-main').append(`<div id="home-content">
