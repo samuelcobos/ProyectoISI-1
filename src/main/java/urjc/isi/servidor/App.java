@@ -64,16 +64,8 @@ public class App {
 
 
 		get("/profesor", (req, res) -> {
-			int random = rnd.nextInt()*(-1);
-			String result = "<form action='/"+random+  "' method='post'>"
-			+ "<fieldset>"
-			+ "<p>INTRODUZCA LOS DATOS:</p>\n"
-			+ "<p>Asignatura</p>\n"
-			+ "<input type='text' name='asignatura' required='true'>"
-			+ "<input type=\"submit\" value=\"Comenzar examen\">"	  
-		    + "</fieldset>" 
-		    + "</form>";
-			
+			String result = IOUtils.toString(App.class.getResourceAsStream("/public/profesor.html"));
+			System.out.println(result);
 			return result;
 		});
 
