@@ -75,6 +75,12 @@ public class App {
 			System.out.println(result);
 			return result;
 		});
+
+		get("/alumno", (req, res) -> {
+			String result = IOUtils.toString(App.class.getResourceAsStream("/examen/prueba.txt"));
+			System.out.println(result);
+			return result;
+		});
 		
 		post("/alumno", (req, res) -> {
 			String result = req.queryParams("nombre")+ " " +
