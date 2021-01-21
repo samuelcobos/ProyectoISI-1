@@ -82,6 +82,7 @@ public class App {
 			return result;
 		});
 		
+		/*
 		post("/alumno", (req, res) -> {
 			String result = req.queryParams("nombre")+ " " +
 			req.queryParams("dni")+ " " +
@@ -99,6 +100,7 @@ public class App {
 			realizaExamenDao.save(realizaExamenObject);
 			return result;
 		});
+		*/
 		
 		
 		get("/cosa", (req, res) -> 
