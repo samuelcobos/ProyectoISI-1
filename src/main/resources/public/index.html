@@ -26,9 +26,9 @@
     <div class="bg-light border-right" id="sidebar-wrapper">
       <div class="sidebar-heading">ISI </div>
       <div class="list-group list-group-flush">
-        <a href="#" class="list-group-item list-group-item-action bg-light" id="home" onclick="drawHome()">Home</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Profesor</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Alumno</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light" id="home-side" onclick="drawHome()">Home</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light" id="profesor-side" onclick="drawProfessor()">Profesor</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light" id="alumno-side" onclick="drawStudent()">Alumno</a>
       </div>
     </div>
     <!-- /#sidebar-wrapper -->
@@ -86,14 +86,37 @@
     });
 
     function drawHome(){
-      removeContain('container-main');
-      $('#container-main').append(`<h1 class="mt-4">Proyecto Final</h1>
-                  <p>Esta es la página principal del proyecto final de la asignatura ISI. En el side bar se puede comprobar y realizar las diferentes acciones.</p>`);
+      removeContain('home-content');
+      $('#container-main').append(`<div id="home-content">
+                  <h1 class="mt-4">Proyecto Final</h1>
+                  <p>Esta es la página principal del proyecto final de la asignatura ISI. En el side bar se puede comprobar y realizar las diferentes acciones.</p>
+                  </div>`);
+    }
 
+    function drawProfessor(){
+      removeContain('home-content');
+      $('#container-main').append(`<div id="home-content">
+                                    <form>
+                                      <div class="form-group">
+                                        <label for="init-exam">Introduzca un id de Examen para crearlo:</label>
+                                        <input type="number" class="form-control" id="init-exam" aria-describedby="init-help" placeholder="Ex: 16598">
+                                        <small id="init-help" class="form-text text-muted">Introduzca un número entero</small>
+                                      </div>
+                                      <button type="submit" class="btn btn-primary">Comenzar</button>
+                                    </form>
+                                  </div>`);
+    }
+
+    function drawStudent(){
+      removeContain('home-content');
+      $('#container-main').append(`<div id="home-content">
+                  <h1 class="mt-4">Proyecto Final</h1>
+                  <p>Esta es la página principal del proyecto final de la asignatura ISI. En el side bar se puede comprobar y realizar las diferentes acciones.</p>
+                  </div>`);
     }
 
     function removeContain(id){
-      $('#'+id).hide();
+      $('#'+id).remove();
     }
   </script>
 
