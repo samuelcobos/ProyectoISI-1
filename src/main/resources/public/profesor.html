@@ -26,46 +26,23 @@
     <div class="bg-light border-right" id="sidebar-wrapper">
       <div class="sidebar-heading">ISI </div>
       <div class="list-group list-group-flush">
-        <a href="#" class="list-group-item list-group-item-action bg-light" id="home-side" onclick="drawHome()">Home</a>
+        <a href="/" class="list-group-item list-group-item-action bg-light" id="home-side">Home</a>
         <a href="/profesor" class="list-group-item list-group-item-action bg-light" id="profesor-side">Profesor</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light" id="alumno-side" onclick="drawStudent()">Alumno</a>
+        <a href="/" class="list-group-item list-group-item-action bg-light" id="alumno-side">Alumno</a>
       </div>
     </div>
     <!-- /#sidebar-wrapper -->
 
     <!-- Page Content -->
     <div id="page-content-wrapper">
-      <!-- 
-      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-        <button class="btn btn-primary" id="menu-toggle">Toggle Menu</button>
+      
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+      <button class="btn btn-primary" id="menu-toggle">Menu</button>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Dropdown
-              </a>
-              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </nav>
-      -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+    </nav>
 
       <div class="container-fluid" id="container-main">
         <form method="get" action="/">
@@ -93,22 +70,6 @@
       e.preventDefault();
       $("#wrapper").toggleClass("toggled");
     });
-
-    function drawHome(){
-      removeContain('home-content');
-      $('#container-main').append(`<div id="home-content">
-                  <h1 class="mt-4">Proyecto Final</h1>
-                  <p>Esta es la página principal del proyecto final de la asignatura ISI. En el side bar se puede comprobar y realizar las diferentes acciones.</p>
-                  </div>`);
-    }
-
-    function drawStudent(){
-      removeContain('home-content');
-      $('#container-main').append(`<div id="home-content">
-                  <h1 class="mt-4">Proyecto Final</h1>
-                  <p>Esta es la página principal del proyecto final de la asignatura ISI. En el side bar se puede comprobar y realizar las diferentes acciones.</p>
-                  </div>`);
-    }
 
     function removeContain(id){
       $('#'+id).remove();
