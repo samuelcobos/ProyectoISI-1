@@ -96,7 +96,7 @@
     function drawProfessor(){
       removeContain('home-content');
       $('#container-main').append(`<div id="home-content">
-                                    <form>
+                                    <form method="get" action="/profesor">
                                       <div class="form-group">
                                         <label for="init-exam">Introduzca un id de Examen para crearlo:</label>
                                         <input type="number" class="form-control" id="init-exam" aria-describedby="init-help" placeholder="Ex: 16598">
