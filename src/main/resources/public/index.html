@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Simple Sidebar - Start Bootstrap Template</title>
+  <title>Proyecto final</title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -27,7 +27,7 @@
       <div class="sidebar-heading">ISI </div>
       <div class="list-group list-group-flush">
         <a href="#" class="list-group-item list-group-item-action bg-light" id="home-side" onclick="drawHome()">Home</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light" id="profesor-side" onclick="drawProfessor()">Profesor</a>
+        <a href="/profesor" class="list-group-item list-group-item-action bg-light" id="profesor-side">Profesor</a>
         <a href="#" class="list-group-item list-group-item-action bg-light" id="alumno-side" onclick="drawStudent()">Alumno</a>
       </div>
     </div>
@@ -93,6 +93,7 @@
                   </div>`);
     }
 
+      /*
     function drawProfessor(){
       removeContain('home-content');
       $('#container-main').append(`<div id="home-content">
@@ -106,6 +107,7 @@
                                     </form>
                                   </div>`);
     }
+    */
 
     function drawStudent(){
       removeContain('home-content');
