@@ -77,7 +77,7 @@ public class App {
 		});
 
 		get("/alumno", (req, res) -> {
-			String result = IOUtils.toString(App.class.getResourceAsStream("/examen/prueba.txt"));
+			String result = IOUtils.toString(App.class.getResourceAsStream("/examenes/prueba.txt"));
 			System.out.println(result);
 			return result;
 		});
